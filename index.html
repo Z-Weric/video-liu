@@ -346,7 +346,7 @@
   /* 数字滚动由 JS 触发，这里只预留字体特性 */
   .stat-num { font-variant-numeric: tabular-nums; }
 
-  /* 视频卡片：悬停缩放 + 播放按钮 + 高光扫过 + 入场错峰 */
+  /* 视频卡片：悬停高光扫过 + 入场错峰 */
   .video-card { position: relative; }
   .video-card::after {
     content: ''; position: absolute; top: 0; left: -90%; width: 55%; height: 100%;
@@ -355,26 +355,6 @@
     transition: left 0.8s ease;
   }
   .video-card:hover::after { left: 130%; }
-  .video-thumb video { transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1); }
-  .video-card:hover .video-thumb video { transform: scale(1.07); }
-  .video-thumb::before, .video-thumb::after {
-    content: ''; position: absolute; pointer-events: none;
-    opacity: 0; transition: opacity 0.35s ease;
-  }
-  .video-card:hover .video-thumb::before,
-  .video-card:hover .video-thumb::after { opacity: 1; }
-  .video-thumb::before {
-    width: 58px; height: 58px; left: 50%; top: 50%;
-    transform: translate(-50%, -50%); border-radius: 50%;
-    background: rgba(255,255,255,0.92);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.25); z-index: 2;
-  }
-  .video-thumb::after {
-    left: calc(50% + 3px); top: 50%; transform: translate(-50%, -50%);
-    border-left: 18px solid var(--accent);
-    border-top: 11px solid transparent; border-bottom: 11px solid transparent;
-    z-index: 3;
-  }
   .video-grid .reveal { transition-delay: calc(var(--i, 0) * 90ms); }
 
   /* 尊重系统「减弱动态效果」偏好 */
